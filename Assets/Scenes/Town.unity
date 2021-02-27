@@ -15117,6 +15117,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1349204976}
   - component: {fileID: 1349204975}
+  - component: {fileID: 1349204977}
+  - component: {fileID: 1349204979}
+  - component: {fileID: 1349204978}
+  - component: {fileID: 1349204980}
   m_Layer: 0
   m_Name: NPC_0
   m_TagString: Untagged
@@ -15188,6 +15192,87 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1349204977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349204974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5322a25460dba7a468bbdd7ff43103f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines: []
+--- !u!61 &1349204978
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349204974}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.077272415}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9375, y: 1}
+    newSize: {x: 0.9375, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9375, y: 1.1545448}
+  m_EdgeRadius: 0
+--- !u!61 &1349204979
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349204974}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.20487118, y: -0.25909138}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9375, y: 1}
+    newSize: {x: 0.9375, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.8759308, y: 3.6459656}
+  m_EdgeRadius: 0
+--- !u!114 &1349204980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349204974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5322a25460dba7a468bbdd7ff43103f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - Test1
+  - Test2
+  - Test3
 --- !u!1001 &5941880977040508855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15307,38 +15392,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5941880977040508858, guid: d45e0315c1917c347853661fdc656fa2,
         type: 3}
-      propertyPath: currentLine
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5941880977040508858, guid: d45e0315c1917c347853661fdc656fa2,
-        type: 3}
       propertyPath: dialogLines.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5941880977040508858, guid: d45e0315c1917c347853661fdc656fa2,
-        type: 3}
-      propertyPath: dialogLines.Array.data[0]
-      value: This
-      objectReference: {fileID: 0}
-    - target: {fileID: 5941880977040508858, guid: d45e0315c1917c347853661fdc656fa2,
-        type: 3}
-      propertyPath: dialogLines.Array.data[1]
-      value: is
-      objectReference: {fileID: 0}
-    - target: {fileID: 5941880977040508858, guid: d45e0315c1917c347853661fdc656fa2,
-        type: 3}
-      propertyPath: dialogLines.Array.data[2]
-      value: a
-      objectReference: {fileID: 0}
-    - target: {fileID: 5941880977040508858, guid: d45e0315c1917c347853661fdc656fa2,
-        type: 3}
-      propertyPath: dialogLines.Array.data[3]
-      value: test
-      objectReference: {fileID: 0}
-    - target: {fileID: 5941880977040508858, guid: d45e0315c1917c347853661fdc656fa2,
-        type: 3}
-      propertyPath: dialogLines.Array.data[4]
-      value: array
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d45e0315c1917c347853661fdc656fa2, type: 3}

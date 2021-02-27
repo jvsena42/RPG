@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,14 +11,18 @@ public class DialogManager : MonoBehaviour
     public GameObject dialogBox;
     public GameObject nameBox;
 
-    private string[] dialogLines = {"This", "is", "a", "test"};
+    public string[] dialogLines;
 
-    private int currentLine=0 ;
+    public int currentLine;
+    private bool justStarted;
+
+    //make a instance to access from dialog activator
+    public static DialogManager instance;
 
     // Start is called before the first frame update
     void Start()
     {   
-        dialogText.text = dialogLines[0];
+        instance = this;
     }
 
     // Update is called once per frame
@@ -29,19 +33,36 @@ public class DialogManager : MonoBehaviour
             //When the button is released by the player
             if (Input.GetButtonUp("Fire1"))
             {
-                currentLine++;
+                if (!justStarted)
+                {
+                    currentLine++;
 
-                //Check the end of the array
-                if (currentLine>=dialogLines.Length)
-                {
-                    currentLine = 0;
-                    dialogBox.SetActive(false);
+                    //Check the end of the array
+                    if (currentLine>=dialogLines.Length)
+                    {
+                        //currentLine = 0;
+                        dialogBox.SetActive(false);
+                    }else
+                    {
+                        dialogText.text = dialogLines[currentLine];
+                    }
                 }else
-                {
-                    dialogText.text = dialogLines[currentLine];
+                {   
+                    //when the player releases the button
+                    justStarted = false;
                 }
-                
             }
+            
         }
+    }
+
+    public void ShowDialog(string[] newLines){
+        dialogLines = newLines;
+        currentLine = 0;
+
+        dialogText.text = dialogLines[0];
+        dialogBox.SetActive(true);
+
+        justStarted = true;
     }
 }
